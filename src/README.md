@@ -1,0 +1,10 @@
+This project builds on the week 5 repository by adding items to the grid. The item in question is food, however you could change the item to objects like boulders, weapons and several other things. 
+Through the item system, the concept of inheretance is displayed, as seen in Food.java food extends from Item.java, essentially acting as the basis for all items on the grid similarly to how Actor.java is the basis for 
+Bird.java, Dog.java and Cat.java. By integrating inheritance into this code, we can save time and space writing code since we simply have to make whatever new items we want to extend from Item.java, vastly improving the 
+reusability of the programs functions. Through the collectable and usable functions that exist within Item.java, the concept of interfaces is displayed as it allows for decoupling. This is because an item doesn't have to be 
+both  collectible and usable, instead an item can be collectible, but not usable, it can be usable but not collectible and it can also be neither. Through this the concept of interfaces is well displayed. Finally the concept of 
+generics is displayed in Inventory.java as Inventory.java is able to be used on currently both exclusively Food type items or items in general, however if we were to add more kinds of items we could further expand this concept
+by giving specific Actors access to only certain types of items, such as Dogs only being allowed to hold food, or Cats beig able to hold food and weapons. By having Inventoty.java integrate generics, it allows for the code to 
+be more easy to read, as well as improves the reusability and safety of the code. The design of this code currently, with some fine tuning, allows for a more fully fleashed out game with further improvements due to the addition
+of inheritance, generics and interfaces. These three techniques allow for more easily reusable, readable and applicable code. In order to run the code, you are required to have java 11 and simply need to add all the files 
+provided into VSCode and press run.

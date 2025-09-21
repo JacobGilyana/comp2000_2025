@@ -14,7 +14,10 @@ public class Stage {
     actors = new ArrayList<Actor>();
     actors.add(new Cat(grid.cellAtColRow(0, 0).get()));
     actors.add(new Dog(grid.cellAtColRow(0, 15).get()));
-    actors.add(new Bird(grid.cellAtColRow(12, 9).get()));    
+    actors.add(new Bird(grid.cellAtColRow(12, 9).get()));
+    grid.cellAtColRow(5, 5).get().item = new Food("Apple", 10);
+    grid.cellAtColRow(8, 12).get().item = new Food("Banana", 15);
+    
   }
 
   public void paint(Graphics g, Point mouseLoc) {

@@ -2,26 +2,28 @@ import java.awt.Color;
 import java.awt.Graphics;
 
 public class Food extends Item implements Collectible, Usable {
-    private final int nutrition;
+  private int nutrition;
 
-    public Food(String name, int nutrition) {
-        super(name);
-        this.nutrition = nutrition;
-    }
+  public Food(String name, int nutrition) {
+    super(name);
+    this.nutrition = nutrition;
+  }
 
-    @Override
-    public void onCollect() {
-        System.out.println(getName() + " collected!");
-    }
+  @Override
+  public void onCollect() {
+    System.out.println(name + " collected!");
+  }
 
-    @Override
-    public void use() {
-        System.out.println("Eating " + getName() + " restores " + nutrition + " health.");
-    }
+  @Override
+  public void use() {
+    System.out.println("You eat " + name + " and gain " + nutrition + " energy!");
+  }
 
-    @Override
-    public void paint(Graphics g, int x, int y) {
-        g.setColor(Color.GREEN);
-        g.fillOval(x + 10, y + 10, 10, 10); // small green dot
-    }
+  @Override
+  public void paint(Graphics g, int x, int y) {
+    g.setColor(Color.RED);
+    g.fillOval(x + 10, y + 10, 15, 15);
+    g.setColor(Color.BLACK);
+    g.drawOval(x + 10, y + 10, 15, 15);
+  }
 }

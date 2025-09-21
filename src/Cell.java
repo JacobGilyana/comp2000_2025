@@ -7,6 +7,7 @@ public class Cell extends Rectangle {
   static int size = 35;
   char col;
   int row;
+  Item item;
 
   public Cell(char inCol, int inRow, int x, int y) {
     super(x, y, size, size);
@@ -14,16 +15,21 @@ public class Cell extends Rectangle {
     row = inRow;
   }
 
-  public void paint(Graphics g, Point mousePos) {
-    if(contains(mousePos)) {
-      g.setColor(Color.GRAY);
-    } else {
-      g.setColor(Color.WHITE);
-    }
-    g.fillRect(x, y, size, size);
-    g.setColor(Color.BLACK);
-    g.drawRect(x, y, size, size);
+public void paint(Graphics g, Point mousePos) {
+  if(contains(mousePos)) {
+    g.setColor(Color.GRAY);
+  } else {
+    g.setColor(Color.WHITE);
   }
+  g.fillRect(x, y, size, size);
+  g.setColor(Color.BLACK);
+  g.drawRect(x, y, size, size);
+
+  // Draw item if present
+  if(item != null) {
+    item.paint(g, x, y);
+  }
+}
 
   public boolean contains(Point p) {
     if(p != null) {

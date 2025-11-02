@@ -4,6 +4,7 @@ import java.awt.Graphics;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
+<<<<<<< HEAD
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 
@@ -11,24 +12,34 @@ import java.time.Duration;
 import java.time.Instant;
 
 
+=======
+>>>>>>> 0f710ff2dd9fa393389ed1fa55f1d9e95ce91adb
 public class Main extends JFrame {
     public static void main(String[] args) throws Exception {
       Main window = new Main();
       window.run();
     }
 
+<<<<<<< HEAD
     class Canvas extends JPanel implements MouseListener {
       Stage stage;
       public Canvas() {
         setPreferredSize(new Dimension(1024, 720));
         this.addMouseListener(this);
         stage = StageReader.readStage("data/stage1.rvb");
+=======
+    class Canvas extends JPanel {
+      Stage stage = new Stage();
+      public Canvas() {
+        setPreferredSize(new Dimension(1024, 720));
+>>>>>>> 0f710ff2dd9fa393389ed1fa55f1d9e95ce91adb
       }
 
       @Override
       public void paint(Graphics g) {
         stage.paint(g, getMousePosition());
       }
+<<<<<<< HEAD
 
       @Override
       public void mouseClicked(MouseEvent e) {
@@ -46,6 +57,8 @@ public class Main extends JFrame {
 
       @Override
       public void mouseExited(MouseEvent e) {}
+=======
+>>>>>>> 0f710ff2dd9fa393389ed1fa55f1d9e95ce91adb
     }
 
     private Main() {
@@ -58,6 +71,7 @@ public class Main extends JFrame {
 
     public void run() {
       while(true) {
+<<<<<<< HEAD
         // Re-draw the screen 50 times per second
         Instant startTime = Instant.now();
         repaint();
@@ -70,6 +84,9 @@ public class Main extends JFrame {
         } catch(IllegalArgumentException e) {
           System.out.println("application can't keep up with framerate");
         }
+=======
+        repaint();
+>>>>>>> 0f710ff2dd9fa393389ed1fa55f1d9e95ce91adb
       }
     }
 }

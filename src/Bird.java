@@ -3,6 +3,7 @@ import java.awt.Polygon;
 import java.util.ArrayList;
 
 public class Bird extends Actor {
+<<<<<<< HEAD
   public static final int birbMoves = 3;
 
   public Bird(Cell inLoc, boolean isBot) {
@@ -10,6 +11,11 @@ public class Bird extends Actor {
   }
 
   protected void setPoly() {
+=======
+  public Bird(Cell inLoc) {
+    loc = inLoc;
+    color = Color.GREEN;
+>>>>>>> 0f710ff2dd9fa393389ed1fa55f1d9e95ce91adb
     display = new ArrayList<Polygon>();
     Polygon wing1 = new Polygon();
     wing1.addPoint(loc.x + 5, loc.y + 5);

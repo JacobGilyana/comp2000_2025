@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Point;
@@ -6,6 +7,12 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Optional;
 import java.util.Set;
+=======
+
+import java.awt.Graphics;
+import java.awt.Point;
+import java.util.Optional;
+>>>>>>> 0f710ff2dd9fa393389ed1fa55f1d9e95ce91adb
 
 public class Grid {
   Cell[][] cells = new Cell[20][20];
@@ -56,6 +63,7 @@ public class Grid {
     }
     return Optional.empty();
   }
+<<<<<<< HEAD
 
   public List<Cell> getRadius(Cell from, int size) {
     int i = labelToCol(from.col);
@@ -81,3 +89,6 @@ public class Grid {
     }
   }
 }
+=======
+}
+>>>>>>> 0f710ff2dd9fa393389ed1fa55f1d9e95ce91adb

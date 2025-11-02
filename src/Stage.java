@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
+<<<<<<< HEAD
 import java.util.concurrent.Executors;
 import java.util.concurrent.ExecutorService;
 
@@ -71,10 +72,33 @@ public class Stage {
     g.setColor(Color.DARK_GRAY);
     g.drawString(currentState.toString(), margin, yLoc);
     yLoc = yLoc + blockVT;
+=======
+public class Stage {
+  Grid grid;
+  List<Actor> actors;
+
+  public Stage() {
+    grid = new Grid();
+    actors = new ArrayList<Actor>();
+    actors.add(new Cat(grid.cellAtColRow(0, 0).get()));
+    actors.add(new Dog(grid.cellAtColRow(0, 15).get()));
+    actors.add(new Bird(grid.cellAtColRow(12, 9).get()));
+    grid.cellAtColRow(5, 5).get().item = new Food("Apple", 10);
+    grid.cellAtColRow(8, 12).get().item = new Food("Banana", 15);
+    
+  }
+
+  public void paint(Graphics g, Point mouseLoc) {
+    grid.paint(g, mouseLoc);
+    for(Actor a: actors) {
+      a.paint(g);
+    }
+>>>>>>> 0f710ff2dd9fa393389ed1fa55f1d9e95ce91adb
     Optional<Cell> underMouse = grid.cellAtPoint(mouseLoc);
     if(underMouse.isPresent()) {
       Cell hoverCell = underMouse.get();
       g.setColor(Color.DARK_GRAY);
+<<<<<<< HEAD
       String coord = String.valueOf(hoverCell.col) + String.valueOf(hoverCell.row);
       g.drawString(coord, margin, yLoc);
     }
@@ -111,3 +135,9 @@ public class Stage {
     currentState.mouseClick(x, y, this);
   }
 }
+=======
+      g.drawString(String.valueOf(hoverCell.col) + String.valueOf(hoverCell.row), 740, 30);
+    }
+  }
+}
+>>>>>>> 0f710ff2dd9fa393389ed1fa55f1d9e95ce91adb
